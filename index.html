@@ -31,7 +31,7 @@
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#programs">Programs</a></li>
+            <li><a href="programs.html">Programs</a></li>
             <li><a href="#internship">Internship</a></li>
             <li><a href="#community">Community</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -117,51 +117,24 @@
         <article class="program">
           <div class="program-copy">
             <h3>Data Analytics</h3>
-            <p>Work with data to answer real questions: collect it, make sense of it, and present what you find so others can act on it.</p>
-            <a class="btn btn-primary btn-lg" href="https://forms.gle/8EbdSy5ttGfLZfjv5" target="_blank" rel="noopener noreferrer">Apply for Data Analytics</a>
+            <p>Working with data and extracting insights.</p>
+            <ul class="chips"><li>Spreadsheet analysis</li><li>Data cleaning</li><li>SQL</li><li>Data visualization</li><li>Business-focused analysis</li></ul>
+            <a class="btn btn-primary btn-lg" href="programs.html#data-analytics">Explore Data Analytics</a>
           </div>
           <div class="program-art">
-            <svg viewBox="0 0 440 300" role="img" aria-label="Bar chart with a rising trend line">
-              <path class="grid" d="M40 80H420M40 140H420M40 200H420" />
-              <path class="axis" d="M40 20V260H420" />
-              <rect x="70" y="170" width="44" height="90" rx="4" fill="#C8E6C9" />
-              <rect x="134" y="140" width="44" height="120" rx="4" fill="#A5D6A7" />
-              <rect x="198" y="150" width="44" height="110" rx="4" fill="#81C784" />
-              <rect x="262" y="100" width="44" height="160" rx="4" fill="#66BB69" />
-              <rect x="326" y="60" width="44" height="200" rx="4" fill="#28CB8B" />
-              <path class="trend" d="M92 150L156 118L220 130L284 82L348 44" />
-              <g class="node">
-                <circle cx="92" cy="150" r="6" />
-                <circle cx="156" cy="118" r="6" />
-                <circle cx="220" cy="130" r="6" />
-                <circle cx="284" cy="82" r="6" />
-                <circle cx="348" cy="44" r="6" />
-              </g>
-            </svg>
+            <img src="images/business-plan-animate.svg" alt="Illustration of people reviewing charts and a business plan" width="500" height="500">
           </div>
         </article>
 
         <article class="program program-reverse">
           <div class="program-copy">
             <h3>Web Development</h3>
-            <p>Build real web pages and projects, and practice the way working developers do, from layout to code.</p>
-            <a class="btn btn-primary btn-lg" href="https://forms.gle/8EbdSy5ttGfLZfjv5" target="_blank" rel="noopener noreferrer">Apply for Web Development</a>
+            <p>Designing and building websites and web applications.</p>
+            <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git/GitHub</li><li>Building web projects</li></ul>
+            <a class="btn btn-primary btn-lg" href="programs.html#web-development">Explore Web Development</a>
           </div>
           <div class="program-art">
-            <svg viewBox="0 0 440 300" role="img" aria-label="Browser window showing a page layout and a code block">
-              <rect class="window" x="30" y="30" width="380" height="240" rx="10" />
-              <path class="axis" d="M30 72H410" />
-              <circle cx="52" cy="51" r="5" fill="#A5D6A7" />
-              <circle cx="70" cy="51" r="5" fill="#81C784" />
-              <circle cx="88" cy="51" r="5" fill="#28CB8B" />
-              <rect x="48" y="90" width="92" height="162" rx="6" fill="#C8E6C9" />
-              <rect class="block" x="158" y="90" width="150" height="18" rx="4" />
-              <rect x="158" y="120" width="232" height="8" rx="4" fill="#A5D6A7" />
-              <rect x="158" y="136" width="200" height="8" rx="4" fill="#A5D6A7" />
-              <rect x="158" y="152" width="216" height="8" rx="4" fill="#A5D6A7" />
-              <rect class="code" x="158" y="176" width="232" height="76" rx="6" />
-              <path class="glyph" d="M212 196l-14 18 14 18M336 196l14 18-14 18M280 190l-14 48" />
-            </svg>
+            <img src="images/hand-coding-animate.svg" alt="Illustration of hands coding on a laptop" width="500" height="500">
           </div>
         </article>
       </div>
@@ -270,7 +243,7 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#programs">Programs</a></li>
+          <li><a href="programs.html">Programs</a></li>
           <li><a href="#internship">Internship</a></li>
           <li><a href="#community">Community</a></li>
         </ul>
@@ -309,7 +282,8 @@
 
       navLinks.forEach((link) => {
         link.removeAttribute("aria-current");
-        if (link.getAttribute("href") === `#${current}`) {
+        const href = link.getAttribute("href");
+        if (href === `#${current}` || (current === "programs" && href === "programs.html")) {
           link.setAttribute("aria-current", "page");
         }
       });
