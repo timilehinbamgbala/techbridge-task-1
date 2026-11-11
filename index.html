@@ -32,7 +32,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="programs.html">Programs</a></li>
-            <li><a href="#internship">Internship</a></li>
+            <li><a href="internship-tasks.html">Internship</a></li>
             <li><a href="#community">Community</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -145,7 +145,10 @@
         <div class="internship-intro">
           <h2>A 30-day practical internship</h2>
           <p>The TechBridge internship is built around practical tasks and projects, so you learn by doing the work. Choose Data Analytics or Web Development and start building real experience.</p>
-          <a class="btn btn-primary btn-lg" href="https://forms.gle/8EbdSy5ttGfLZfjv5" target="_blank" rel="noopener noreferrer">Apply now</a>
+          <div class="internship-actions">
+            <a class="btn btn-primary btn-lg" href="https://forms.gle/8EbdSy5ttGfLZfjv5" target="_blank" rel="noopener noreferrer">Apply now</a>
+            <a class="btn btn-outline-light btn-lg" href="internship-tasks.html">See the 8 tasks</a>
+          </div>
         </div>
 
         <ul class="benefits">
@@ -244,7 +247,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="programs.html">Programs</a></li>
-          <li><a href="#internship">Internship</a></li>
+          <li><a href="internship-tasks.html">Internship</a></li>
           <li><a href="#community">Community</a></li>
         </ul>
       </nav>
@@ -283,7 +286,7 @@
       navLinks.forEach((link) => {
         link.removeAttribute("aria-current");
         const href = link.getAttribute("href");
-        if (href === `#${current}` || (current === "programs" && href === "programs.html")) {
+        if (href === `#${current}` || (current === "programs" && href === "programs.html") || (current === "internship" && href === "internship-tasks.html")) {
           link.setAttribute("aria-current", "page");
         }
       });
