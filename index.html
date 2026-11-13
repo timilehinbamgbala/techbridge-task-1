@@ -265,42 +265,8 @@
     <p class="copyright">&copy; 2026 TechBridge by Baselink Services Limited. All rights reserved.</p>
   </footer>
 
-  <script>
-    const sections = document.querySelectorAll("section[id], footer[id]");
-    const navLinks = document.querySelectorAll(".links a");
-
-    function setActiveLink() {
-      let current = "";
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
-        current = "contact";
-      }
-
-      navLinks.forEach((link) => {
-        link.removeAttribute("aria-current");
-        const href = link.getAttribute("href");
-        if (href === `#${current}` || (current === "programs" && href === "programs.html") || (current === "internship" && href === "internship-tasks.html")) {
-          link.setAttribute("aria-current", "page");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", setActiveLink);
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        setTimeout(setActiveLink, 50);
-      });
-    });
-
-    setActiveLink();
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/EasePack.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

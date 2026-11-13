@@ -6,7 +6,7 @@
     <title>Internship Tasks | TechBridge</title>
     <meta
       name="description"
-      content="The TechBridge 30-day internship: eight practical tasks from Day 1 to Day 26."
+      content="Interactive 30-day internship roadmap — switch between Data Analytics and Web Development tracks."
     />
     <link rel="icon" type="image/png" href="images/techbridge-logo.png" />
     <link rel="apple-touch-icon" href="images/techbridge-logo.png" />
@@ -50,9 +50,7 @@
               <li><a href="index.html#about">About</a></li>
               <li><a href="programs.html">Programs</a></li>
               <li>
-                <a href="internship-tasks.html" aria-current="page"
-                  >Internship</a
-                >
+                <a href="internship-tasks.html" aria-current="page">Internship</a>
               </li>
               <li><a href="index.html#community">Community</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -87,10 +85,9 @@
               <span class="h1-accent">One 30-day journey.</span>
             </h1>
             <p class="intro-text">
-              TechBridge provides a structured 30-day practical internship. You
-              progressively develop your web development skills by completing
-              practical projects, one task at a time, from your first homepage
-              to a complete internship platform.
+              TechBridge provides a structured 30-day practical internship.
+              Choose a track below to explore the full journey — from your first
+              task to the final capstone project.
             </p>
           </div>
           <img
@@ -103,299 +100,46 @@
         </div>
       </section>
 
-      <section id="journey" class="journey">
+      <section class="roadmap-section" id="roadmap">
         <div class="section-head">
-          <h2>The 30 days at a glance</h2>
-          <p>
-            Each task starts on a set day. Select a task to jump to its details.
-          </p>
+          <h2>Choose your internship track</h2>
+          <p>Switch between Data Analytics and Web Development to see the exact tasks for each path.</p>
         </div>
-        <div class="track-wrap">
-          <ol class="track">
-            <li style="--d: 1">
-              <a href="#task-1" aria-label="Task 1, day 1"
-                ><span class="pin">1</span><span class="pin-day">Day 1</span></a
-              >
-            </li>
-            <li style="--d: 4">
-              <a href="#task-2" aria-label="Task 2, day 4"
-                ><span class="pin">2</span><span class="pin-day">Day 4</span></a
-              >
-            </li>
-            <li style="--d: 8">
-              <a href="#task-3" aria-label="Task 3, day 8"
-                ><span class="pin">3</span><span class="pin-day">Day 8</span></a
-              >
-            </li>
-            <li style="--d: 11">
-              <a href="#task-4" aria-label="Task 4, day 11"
-                ><span class="pin">4</span
-                ><span class="pin-day">Day 11</span></a
-              >
-            </li>
-            <li style="--d: 15">
-              <a href="#task-5" aria-label="Task 5, day 15"
-                ><span class="pin">5</span
-                ><span class="pin-day">Day 15</span></a
-              >
-            </li>
-            <li style="--d: 19">
-              <a href="#task-6" aria-label="Task 6, day 19"
-                ><span class="pin">6</span
-                ><span class="pin-day">Day 19</span></a
-              >
-            </li>
-            <li style="--d: 22">
-              <a href="#task-7" aria-label="Task 7, day 22"
-                ><span class="pin">7</span
-                ><span class="pin-day">Day 22</span></a
-              >
-            </li>
-            <li style="--d: 26">
-              <a href="#task-8" aria-label="Task 8, day 26"
-                ><span class="pin">8</span
-                ><span class="pin-day">Day 26</span></a
-              >
-            </li>
-            <li class="track-end" style="--d: 30">
-              <span class="end-ring" aria-hidden="true"></span
-              ><span class="pin-day">Day 30</span>
-            </li>
-          </ol>
-        </div>
-        <ul
-          class="legend"
-          aria-label="Difficulty levels, from easiest to hardest"
-        >
-          <li class="lvl-1">
-            <span class="meter" aria-hidden="true"
-              ><i></i><i></i><i></i><i></i></span
-            >Beginner
-          </li>
-          <li class="lvl-2">
-            <span class="meter" aria-hidden="true"
-              ><i></i><i></i><i></i><i></i></span
-            >Beginner &rarr; Intermediate
-          </li>
-          <li class="lvl-3">
-            <span class="meter" aria-hidden="true"
-              ><i></i><i></i><i></i><i></i></span
-            >Intermediate
-          </li>
-          <li class="lvl-4">
-            <span class="meter" aria-hidden="true"
-              ><i></i><i></i><i></i><i></i></span
-            >Intermediate &rarr; Advanced Beginner
-          </li>
-        </ul>
-      </section>
 
-      <section id="roadmap" class="roadmap-section">
-        <div class="section-head">
-          <h2>Task by task</h2>
-          <p>The work gets more challenging as the internship goes on.</p>
+        <div class="track-tabs" role="tablist" aria-label="Internship tracks" data-active="web">
+          <button
+            class="track-tab"
+            role="tab"
+            id="tab-data"
+            aria-selected="false"
+            aria-controls="panel-tasks"
+            data-track="data"
+          >
+            Data Analytics
+          </button>
+          <button
+            class="track-tab is-active"
+            role="tab"
+            id="tab-web"
+            aria-selected="true"
+            aria-controls="panel-tasks"
+            data-track="web"
+          >
+            Web Development
+          </button>
         </div>
-        <ol class="roadmap">
-          <li class="step" id="task-1">
-            <div class="step-day"><span>Day</span><strong>1</strong></div>
-            <article class="task-card">
-              <div class="task-top">
-                <p class="task-no">Task 1</p>
-                <p class="level lvl-1">
-                  <span class="meter" aria-hidden="true"
-                    ><i></i><i></i><i></i><i></i></span
-                  >Beginner
-                </p>
-              </div>
-              <h3>Build the TechBridge Homepage</h3>
-              <p class="task-desc">
-                Create the first version of the TechBridge website using HTML
-                and CSS.
-              </p>
-              <details>
-                <summary>What you will build</summary>
-                <p>
-                  A first version of the TechBridge website, written in HTML and
-                  CSS.
-                </p>
-              </details>
-            </article>
-          </li>
-          <li class="step" id="task-2">
-            <div class="step-day"><span>Day</span><strong>4</strong></div>
-            <article class="task-card">
-              <div class="task-top">
-                <p class="task-no">Task 2</p>
-                <p class="level lvl-1">
-                  <span class="meter" aria-hidden="true"
-                    ><i></i><i></i><i></i><i></i></span
-                  >Beginner
-                </p>
-              </div>
-              <h3>Build the TechBridge Programs Experience</h3>
-              <p class="task-desc">
-                Create a Programs experience that presents TechBridge's
-                available learning programs.
-              </p>
-              <details>
-                <summary>What you will build</summary>
-                <p>
-                  A page that presents the learning programs TechBridge offers.
-                </p>
-              </details>
-            </article>
-          </li>
-          <li class="step" id="task-3">
-            <div class="step-day"><span>Day</span><strong>8</strong></div>
-            <article class="task-card">
-              <div class="task-top">
-                <p class="task-no">Task 3</p>
-                <p class="level lvl-2">
-                  <span class="meter" aria-hidden="true"
-                    ><i></i><i></i><i></i><i></i></span
-                  >Beginner &rarr; Intermediate
-                </p>
-              </div>
-              <h3>Build the Internship Tasks Experience</h3>
-              <p class="task-desc">
-                Create an interface that presents the TechBridge internship
-                tasks and helps users understand the internship journey.
-              </p>
-              <details>
-                <summary>What you will build</summary>
-                <p>
-                  An interface that lays out the internship tasks so a visitor
-                  can understand the whole journey.
-                </p>
-              </details>
-            </article>
-          </li>
-          <li class="step" id="task-4">
-            <div class="step-day"><span>Day</span><strong>11</strong></div>
-            <article class="task-card">
-              <div class="task-top">
-                <p class="task-no">Task 4</p>
-                <p class="level lvl-3">
-                  <span class="meter" aria-hidden="true"
-                    ><i></i><i></i><i></i><i></i></span
-                  >Intermediate
-                </p>
-              </div>
-              <h3>Build an Interactive Task Tracker</h3>
-              <p class="task-desc">
-                Use JavaScript to make the internship task experience
-                interactive and allow progress to be tracked.
-              </p>
-              <details>
-                <summary>What you will build</summary>
-                <p>
-                  An interactive version of the tasks experience, built with
-                  JavaScript, where progress can be tracked.
-                </p>
-              </details>
-            </article>
-          </li>
-          <li class="step" id="task-5">
-            <div class="step-day"><span>Day</span><strong>15</strong></div>
-            <article class="task-card">
-              <div class="task-top">
-                <p class="task-no">Task 5</p>
-                <p class="level lvl-3">
-                  <span class="meter" aria-hidden="true"
-                    ><i></i><i></i><i></i><i></i></span
-                  >Intermediate
-                </p>
-              </div>
-              <h3>Build the Intern Registration Experience</h3>
-              <p class="task-desc">
-                Create a professional registration/onboarding interface for
-                TechBridge interns.
-              </p>
-              <details>
-                <summary>What you will build</summary>
-                <p>
-                  A professional registration and onboarding interface for new
-                  interns.
-                </p>
-              </details>
-            </article>
-          </li>
-          <li class="step" id="task-6">
-            <div class="step-day"><span>Day</span><strong>19</strong></div>
-            <article class="task-card">
-              <div class="task-top">
-                <p class="task-no">Task 6</p>
-                <p class="level lvl-3">
-                  <span class="meter" aria-hidden="true"
-                    ><i></i><i></i><i></i><i></i></span
-                  >Intermediate
-                </p>
-              </div>
-              <h3>Build the Task Submission System</h3>
-              <p class="task-desc">
-                Create an interface through which interns can prepare and submit
-                their task work.
-              </p>
-              <details>
-                <summary>What you will build</summary>
-                <p>
-                  An interface where interns prepare their task work and submit
-                  it.
-                </p>
-              </details>
-            </article>
-          </li>
-          <li class="step" id="task-7">
-            <div class="step-day"><span>Day</span><strong>22</strong></div>
-            <article class="task-card">
-              <div class="task-top">
-                <p class="task-no">Task 7</p>
-                <p class="level lvl-4">
-                  <span class="meter" aria-hidden="true"
-                    ><i></i><i></i><i></i><i></i></span
-                  >Intermediate &rarr; Advanced Beginner
-                </p>
-              </div>
-              <h3>Build the Intern Dashboard</h3>
-              <p class="task-desc">
-                Create a dashboard where an intern can view their profile,
-                progress, tasks, and submissions.
-              </p>
-              <details>
-                <summary>What you will build</summary>
-                <p>
-                  A dashboard showing an intern's profile, progress, tasks and
-                  submissions.
-                </p>
-              </details>
-            </article>
-          </li>
-          <li class="step" id="task-8">
-            <div class="step-day"><span>Day</span><strong>26</strong></div>
-            <article class="task-card">
-              <div class="task-top">
-                <p class="task-no">Task 8</p>
-                <p class="level lvl-4">
-                  <span class="meter" aria-hidden="true"
-                    ><i></i><i></i><i></i><i></i></span
-                  >Intermediate &rarr; Advanced Beginner
-                </p>
-              </div>
-              <h3>Build the Complete TechBridge Internship Platform</h3>
-              <p class="task-desc">
-                Combine the different components created during the internship
-                into a complete TechBridge platform.
-              </p>
-              <details>
-                <summary>What you will build</summary>
-                <p>
-                  A complete platform that brings together the components from
-                  the earlier tasks.
-                </p>
-              </details>
-            </article>
-          </li>
-        </ol>
+
+        <p class="currently-viewing" aria-live="polite">
+          Currently viewing:
+          <strong id="current-track-name">Web Development</strong>
+        </p>
+
+        <div
+          id="panel-tasks"
+          class="task-panel"
+          role="tabpanel"
+          aria-labelledby="tab-web"
+        ></div>
       </section>
 
       <section class="cta-band">
@@ -450,16 +194,8 @@
                 rel="noopener noreferrer"
                 aria-label="TechBridge on LinkedIn"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="18"
-                  height="18"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    d="M6.9 9.5H3.8V20h3.1V9.5zM5.3 4.4a1.8 1.8 0 100 3.6 1.8 1.8 0 000-3.6zM20.2 13.6c0-2.8-1.5-4.3-3.6-4.3-1.7 0-2.5.9-2.9 1.6V9.5h-3.1V20h3.1v-5.6c0-1.5.3-2.9 2.1-2.9s1.8 1.7 1.8 3V20h3.1v-6.4z"
-                  />
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                  <path d="M6.9 9.5H3.8V20h3.1V9.5zM5.3 4.4a1.8 1.8 0 100 3.6 1.8 1.8 0 000-3.6zM20.2 13.6c0-2.8-1.5-4.3-3.6-4.3-1.7 0-2.5.9-2.9 1.6V9.5h-3.1V20h3.1v-5.6c0-1.5.3-2.9 2.1-2.9s1.8 1.7 1.8 3V20h3.1v-6.4z"/>
                 </svg>
               </a>
             </li>
@@ -470,16 +206,8 @@
                 rel="noopener noreferrer"
                 aria-label="Baselink Services on Facebook"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="18"
-                  height="18"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.6V13h2.7v8h3.2z"
-                  />
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                  <path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.6V13h2.7v8h3.2z"/>
                 </svg>
               </a>
             </li>
@@ -528,5 +256,9 @@
         reserved.
       </p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/EasePack.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

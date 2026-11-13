@@ -59,6 +59,7 @@ body {
   background: var(--page);
   color: var(--page-text);
   line-height: 1.5;
+  overflow-x: clip;
 }
 
 section[id],
@@ -216,6 +217,11 @@ footer[id] {
 
 .btn-ghost:hover {
   border-color: var(--accent-text);
+}
+
+.btn:active,
+.btn-primary:active {
+  transform: translateY(0) scale(0.97);
 }
 
 .menu-toggle {
@@ -1468,26 +1474,6 @@ footer[id] {
   }
 }
 
-.task-card {
-  grid-column: 1;
-  grid-row: 1;
-  padding: 28px;
-  background: var(--card);
-  border: 1px solid var(--card-line);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(171, 190, 209, 0.2);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.step:nth-child(even) .task-card {
-  grid-column: 3;
-}
-
-.task-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(171, 190, 209, 0.35);
-}
-
 .task-top {
   display: flex;
   flex-wrap: wrap;
@@ -1514,7 +1500,7 @@ footer[id] {
   color: var(--body-muted);
 }
 
-.task-card h3 {
+.flip-face h3 {
   margin: 0 0 8px;
   font-family: "Inter", system-ui, sans-serif;
   font-weight: 700;
@@ -2000,11 +1986,6 @@ footer[id] {
     grid-column: 1;
     justify-self: start;
   }
-
-  .task-card,
-  .step:nth-child(even) .task-card {
-    grid-column: 2;
-  }
 }
 
 @media (max-width: 700px) {
@@ -2042,7 +2023,7 @@ footer[id] {
     font-size: 1.125rem;
   }
 
-  .task-card {
+  .flip-face {
     padding: 20px;
   }
 }
@@ -2087,5 +2068,286 @@ footer[id] {
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+  }
+}
+
+.track-tabs {
+  position: relative;
+  display: flex;
+  max-width: 480px;
+  margin: 0 auto 28px;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--card-line-strong);
+  border-radius: 14px;
+}
+
+.track-tab {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--body-muted);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.track-tab:hover {
+  color: var(--head);
+}
+
+.track-tab.is-active {
+  color: var(--ink);
+}
+
+.track-tab:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.track-tabs::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: calc(50% - 6px);
+  height: calc(100% - 12px);
+  background: var(--green);
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(40, 203, 139, 0.4);
+  transition: transform 0.55s cubic-bezier(0.34, 1.4, 0.64, 1);
+  z-index: 1;
+}
+
+.track-tabs[data-active="data"]::before {
+  transform: translateX(0);
+}
+
+.track-tabs[data-active="web"]::before {
+  transform: translateX(100%);
+}
+
+.currently-viewing {
+  text-align: center;
+  margin: 0 0 40px;
+  font-size: 0.9375rem;
+  color: var(--body-muted);
+}
+
+.currently-viewing strong {
+  color: var(--head-accent);
+  font-weight: 600;
+}
+
+.task-panel {
+  position: relative;
+}
+
+.task-panel.is-fading {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.task-panel.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.task-flip {
+  perspective: 1400px;
+  cursor: pointer;
+}
+
+.task-flip:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.task-inner {
+  position: relative;
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.task-flip.is-flipped .task-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  grid-area: 1 / 1;
+  min-height: 220px;
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(171, 190, 209, 0.2);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.flip-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+.task-flip:hover .flip-face {
+  box-shadow: 0 12px 28px rgba(171, 190, 209, 0.35);
+}
+
+.flip-hint {
+  margin: 18px 0 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--accent-text);
+  opacity: 0.9;
+}
+
+.flip-back .task-desc {
+  margin: 12px 0 0;
+  line-height: 1.65;
+}
+
+.step .task-flip {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.step:nth-child(even) .task-flip {
+  grid-column: 3;
+}
+
+@media (max-width: 900px) {
+  .step .task-flip,
+  .step:nth-child(even) .task-flip {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .track-tabs {
+    max-width: none;
+  }
+
+  .track-tab {
+    padding: 12px 14px;
+    font-size: 0.875rem;
+  }
+
+  .flip-face {
+    min-height: 200px;
+  }
+}
+
+.bubble-goo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  visibility: hidden;
+}
+
+.btn-bubble {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+}
+
+.btn-bubble:hover {
+  background: transparent;
+}
+
+.bubble-fx {
+  position: absolute;
+  top: -150%;
+  left: -50%;
+  z-index: -1;
+  width: 200%;
+  height: 400%;
+  filter: url("#bubble-goo");
+  pointer-events: none;
+}
+
+.bubble-fx .fill {
+  position: absolute;
+  top: 37.5%;
+  left: 25%;
+  width: 50%;
+  height: 25%;
+  border-radius: 6px;
+}
+
+.bubble-fx .circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.bubble-fx .circle.tl {
+  top: 40%;
+  left: 27%;
+}
+
+.bubble-fx .circle.br {
+  bottom: 40%;
+  right: 27%;
+}
+
+.bubble-fx .fill,
+.bubble-fx .circle {
+  background: var(--green);
+  transition: background-color 0.1s ease-out;
+}
+
+.btn-bubble:hover .fill,
+.btn-bubble:hover .circle {
+  background: var(--green-hover);
+}
+
+.tab-bubble {
+  position: absolute;
+  z-index: 3;
+  border-radius: 50%;
+  border: 1px solid rgba(40, 203, 139, 0.7);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.85),
+    rgba(40, 203, 139, 0.35) 60%,
+    rgba(40, 203, 139, 0.15)
+  );
+  pointer-events: none;
+}
+
+.task-panel.is-visible .step {
+  animation: step-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+@keyframes step-pop {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .task-panel.is-visible .step {
+    animation: none;
   }
 }
