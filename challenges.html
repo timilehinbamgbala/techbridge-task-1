@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenge Hub | TechBridge</title>
+  <meta name="description" content="Browse practical Data Analytics and Web Development challenges from the TechBridge internship and see what you would build.">
+  <link rel="icon" type="image/png" href="images/techbridge-logo.png">
+  <link rel="apple-touch-icon" href="images/techbridge-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html" aria-label="TechBridge home">
+        <img src="images/techbridge-logo.png" alt="TechBridge" class="brand-mark" width="190" height="36">
+      </a>
+
+      <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Toggle navigation menu">
+      <label class="menu-button" for="menu-toggle" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <div class="panel">
+        <nav class="links" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="internship-tasks.html">Internship</a></li>
+            <li><a href="challenges.html" aria-current="page">Challenges</a></li>
+            <li><a href="index.html#community">Community</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="actions">
+          <a class="btn btn-ghost" href="https://chat.whatsapp.com/FqpBvYS4oaK32cXDxc8JIS" target="_blank" rel="noopener noreferrer">Join community</a>
+          <a class="btn btn-primary" href="https://forms.gle/8EbdSy5ttGfLZfjv5" target="_blank" rel="noopener noreferrer">Apply now</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-intro">
+      <div class="intro-split">
+        <div class="intro-copy">
+          <h1>Real work to try. <span class="h1-accent">Pick a challenge.</span></h1>
+          <p class="intro-text">The Challenge Hub shows the kind of practical work TechBridge interns do. Browse challenges from both tracks, check how hard each one is, and open any of them to see what you would need to produce.</p>
+        </div>
+        <img class="intro-art" src="images/business-challenge-animate.svg" alt="Illustration of people working together on a business challenge" width="750" height="500">
+      </div>
+    </section>
+
+    <section id="challenges" class="challenge-section">
+      <div class="section-head">
+        <h2>Browse the challenges</h2>
+        <p>Filter by track or difficulty, or search by name. Select View Challenge to read the full details.</p>
+      </div>
+
+      <div class="ch-controls" role="region" aria-label="Filter challenges">
+        <div class="ch-field ch-search">
+          <label for="challengeSearch">Search by name</label>
+          <input id="challengeSearch" type="search" placeholder="Try dashboard, form or sales" autocomplete="off">
+        </div>
+
+        <div class="ch-field ch-sort">
+          <label for="challengeSort">Sort by</label>
+          <select id="challengeSort">
+            <option value="default">Featured order</option>
+            <option value="easy">Easiest first</option>
+            <option value="hard">Hardest first</option>
+            <option value="name">Name, A to Z</option>
+          </select>
+        </div>
+
+        <div class="ch-field ch-wide">
+          <span class="ch-label" id="trackLabel">Track</span>
+          <div class="ch-chips" role="group" aria-labelledby="trackLabel">
+            <button type="button" class="ch-chip" data-group="track" data-value="all" aria-pressed="true">All tracks</button>
+            <button type="button" class="ch-chip" data-group="track" data-value="Data Analytics" aria-pressed="false">Data Analytics</button>
+            <button type="button" class="ch-chip" data-group="track" data-value="Web Development" aria-pressed="false">Web Development</button>
+          </div>
+        </div>
+
+        <div class="ch-field ch-wide">
+          <span class="ch-label" id="levelLabel">Difficulty</span>
+          <div class="ch-chips" role="group" aria-labelledby="levelLabel">
+            <button type="button" class="ch-chip" data-group="level" data-value="all" aria-pressed="true">All levels</button>
+            <button type="button" class="ch-chip" data-group="level" data-value="Beginner" aria-pressed="false">Beginner</button>
+            <button type="button" class="ch-chip" data-group="level" data-value="Intermediate" aria-pressed="false">Intermediate</button>
+            <button type="button" class="ch-chip" data-group="level" data-value="Advanced" aria-pressed="false">Advanced</button>
+          </div>
+        </div>
+
+        <div class="ch-status">
+          <p id="challengeCount" aria-live="polite"></p>
+          <button type="button" id="challengeReset" class="ch-reset" hidden>Reset filters</button>
+        </div>
+      </div>
+
+      <div id="challengeGrid" class="ch-grid"></div>
+
+      <div id="challengeEmpty" class="ch-empty" hidden>
+        <h3>No challenges match those filters</h3>
+        <p>Try a different track or difficulty, or clear your search to see every challenge again.</p>
+        <button type="button" id="challengeEmptyReset" class="btn btn-solid">Show all challenges</button>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="cta-copy">
+        <h2>Ready to take on the real thing?</h2>
+        <p>Apply through the official application form.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary btn-lg" href="https://forms.gle/8EbdSy5ttGfLZfjv5" target="_blank" rel="noopener noreferrer">Apply for the TechBridge internship</a>
+        <a class="btn btn-outline-light btn-lg" href="internship-tasks.html">See the 8 tasks</a>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="challengeModal" class="ch-modal" aria-labelledby="modalTitle">
+    <div class="ch-modal-inner">
+      <button type="button" class="ch-modal-close" id="modalClose">Close</button>
+      <div id="modalBody"></div>
+    </div>
+  </dialog>
+
+  <footer id="contact" class="site-footer">
+    <div class="contact-block">
+      <h2>Contact TechBridge</h2>
+      <p>Have a question about the programs or the internship? Send us an email.</p>
+      <a class="contact-mail" href="mailto:techbridgebaslink@gmail.com">techbridgebaslink@gmail.com</a>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/techbridge-logo.png" alt="TechBridge" width="190" height="36">
+        <p class="footer-tagline">Bridging Learning to Real-World Experience</p>
+        <ul class="social">
+          <li>
+            <a href="https://www.linkedin.com/company/techbridge-services/" target="_blank" rel="noopener noreferrer" aria-label="TechBridge on LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.9 9.5H3.8V20h3.1V9.5zM5.3 4.4a1.8 1.8 0 100 3.6 1.8 1.8 0 000-3.6zM20.2 13.6c0-2.8-1.5-4.3-3.6-4.3-1.7 0-2.5.9-2.9 1.6V9.5h-3.1V20h3.1v-5.6c0-1.5.3-2.9 2.1-2.9s1.8 1.7 1.8 3V20h3.1v-6.4z" /></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/p/Baselink-Services-100066771475783/" target="_blank" rel="noopener noreferrer" aria-label="Baselink Services on Facebook">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.6V13h2.7v8h3.2z" /></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="internship-tasks.html">Internship</a></li>
+          <li><a href="challenges.html">Challenges</a></li>
+          <li><a href="index.html#community">Community</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Get involved</h3>
+        <ul>
+          <li><a href="https://forms.gle/8EbdSy5ttGfLZfjv5" target="_blank" rel="noopener noreferrer">Apply for the internship</a></li>
+          <li><a href="https://chat.whatsapp.com/FqpBvYS4oaK32cXDxc8JIS" target="_blank" rel="noopener noreferrer">Join the WhatsApp community</a></li>
+          <li><a href="mailto:techbridgebaslink@gmail.com">Email TechBridge</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; 2026 TechBridge by Baselink Services Limited. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/EasePack.min.js"></script>
+  <script src="script.js?v=3"></script>
+</body>
+</html>
